@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import config from './config/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrganizationModule } from './modules/organization/organization.module';
+import { ProductModule } from './modules/product/product.module';
 
 const envFilePath =
   process.env.NODE_ENV === 'testing' ? '.testing.env' : '.env';
@@ -31,6 +32,7 @@ const envFilePath =
       inject: [ConfigService],
     }),
     OrganizationModule,
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],

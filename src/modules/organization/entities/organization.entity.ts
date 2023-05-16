@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Product } from '../../product/entities/product.entity';
 
 @Entity('organizations')
 export class Organization {
@@ -26,6 +28,9 @@ export class Organization {
 
   @DeleteDateColumn()
   deleted_at: Date;
+
+  @OneToMany(() => Product, (product) => product.organization)
+  products: Product[];
 
   constructor(name: string, type: string) {
     this.name = name;
