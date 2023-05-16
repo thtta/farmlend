@@ -26,7 +26,7 @@ const envFilePath =
         password: configService.get('db.PASSWORD'),
         database: configService.get('db.NAME'),
         autoLoadEntities: true,
-        synchronize: configService.get('db.SYNCHRONIZE') === 'true',
+        synchronize: process.env.NODE_ENV === 'testing' ? true : false,
       }),
       inject: [ConfigService],
     }),
@@ -35,6 +35,4 @@ const envFilePath =
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-  constructor() {}
-}
+export class AppModule {}
