@@ -7,8 +7,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { Organization } from '../../organization/entities/organization.entity';
+import { OrderProduct } from '../../order/entities/order-product.entity';
 
 @Entity('products')
 export class Product {
@@ -38,6 +40,9 @@ export class Product {
   })
   @JoinColumn({ name: 'organization_id' })
   organization: Organization;
+
+  @OneToMany(() => OrderProduct, (order) => order.product)
+  orders: OrderProduct[];
 
   constructor(category: string, variety: string, packaging: string) {
     this.category = category;

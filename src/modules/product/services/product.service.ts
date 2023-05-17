@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from '../entities/product.entity';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { CreateProductDto } from '../dto/create-product.dto';
 import { ProductFactory } from '../factories/product.factory';
 import {
@@ -55,5 +55,13 @@ export class ProductService {
     const product = await this.findById(id);
 
     await this.productRepository.softDelete(product.id);
+  }
+
+  async findByIds(ids: number[]): Promise<Product[]> {
+    return await this.productRepository.find({
+      where: {
+        id: In(ids),
+      },
+    });
   }
 }
