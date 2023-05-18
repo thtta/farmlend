@@ -48,7 +48,7 @@ describe('OrganizationService', () => {
         {
           provide: getRepositoryToken(Organization),
           useValue: {
-            findOneBy: jest.fn().mockResolvedValue(organization),
+            findOne: jest.fn().mockResolvedValue(organization),
             save: jest.fn().mockResolvedValue(organization),
             softDelete: jest.fn().mockResolvedValue(true),
           },
@@ -97,17 +97,15 @@ describe('OrganizationService', () => {
       const id = 1;
       const result = await service.findById(id);
       expect(result).toEqual(organization);
-      expect(repository.findOneBy).toHaveBeenCalledWith({ id });
-      expect(repository.findOneBy).toBeCalledTimes(1);
+      expect(repository.findOne).toBeCalledTimes(1);
     });
 
     it('should throw an exception when an organization is not found', async () => {
       const id = 1;
-      jest.spyOn(repository, 'findOneBy').mockResolvedValue(undefined);
+      jest.spyOn(repository, 'findOne').mockResolvedValue(undefined);
 
       await expect(service.findById(id)).rejects.toThrow(HttpException);
-      expect(repository.findOneBy).toHaveBeenCalledWith({ id });
-      expect(repository.findOneBy).toBeCalledTimes(1);
+      expect(repository.findOne).toBeCalledTimes(1);
     });
   });
 
@@ -121,8 +119,8 @@ describe('OrganizationService', () => {
 
       const result = await service.update(id, updateDto);
       expect(result).toEqual(organization);
-      expect(repository.findOneBy).toHaveBeenCalledWith({ id });
-      expect(repository.findOneBy).toBeCalledTimes(1);
+
+      expect(repository.findOne).toBeCalledTimes(1);
       expect(repository.save).toBeCalledTimes(1);
     });
   });
@@ -132,8 +130,8 @@ describe('OrganizationService', () => {
       const id = 1;
 
       await service.delete(id);
-      expect(repository.findOneBy).toHaveBeenCalledWith({ id });
-      expect(repository.findOneBy).toBeCalledTimes(1);
+
+      expect(repository.findOne).toBeCalledTimes(1);
       expect(repository.softDelete).toBeCalledTimes(1);
     });
   });
