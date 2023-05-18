@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Product } from '../../product/entities/product.entity';
+import { Order } from '../../order/entities/order.entity';
 
 @Entity('organizations')
 export class Organization {
@@ -31,6 +32,9 @@ export class Organization {
 
   @OneToMany(() => Product, (product) => product.organization)
   products: Product[];
+
+  @OneToMany(() => Order, (order) => order.organization)
+  orders: Order[];
 
   constructor(name: string, type: string) {
     this.name = name;

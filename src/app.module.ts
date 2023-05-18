@@ -6,6 +6,7 @@ import config from './config/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrganizationModule } from './modules/organization/organization.module';
 import { ProductModule } from './modules/product/product.module';
+import { OrderModule } from './modules/order/order.module';
 
 const envFilePath =
   process.env.NODE_ENV === 'testing' ? '.testing.env' : '.env';
@@ -33,6 +34,7 @@ const envFilePath =
     }),
     OrganizationModule,
     ProductModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],
