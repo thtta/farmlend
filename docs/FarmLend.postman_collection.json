@@ -1,0 +1,1449 @@
+{
+	"info": {
+		"_postman_id": "10b9a5c8-1f83-4c03-9856-7eb6e8187f3a",
+		"name": "FarmLend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2432385"
+	},
+	"item": [
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Create Organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"farmlend\",\n    \"type\": \"buyer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/organizations",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"farmlend\",\n    \"type\": \"buyer\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/organizations",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"organizations"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:35:55 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVFKDMXYMABW9BZZ3KBG8Y-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Organization has been created\",\n    \"data\": {\n        \"name\": \"farmlend\",\n        \"type\": \"buyer\",\n        \"deleted_at\": null,\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:35:55.459Z\",\n        \"updated_at\": \"2023-05-18T16:35:55.459Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Organizations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/organizations?page=1&perPage=30",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"organizations"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/organizations?page=1&perPage=30",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"organizations"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "perPage",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:36:14 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVG5Z2CZSTW2QGPQREJNYY-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Organizations\",\n    \"data\": {\n        \"organizations\": [\n            {\n                \"name\": \"farmlend\",\n                \"type\": \"buyer\",\n                \"id\": 1,\n                \"created_at\": \"2023-05-18T16:35:55.459Z\",\n                \"updated_at\": \"2023-05-18T16:35:55.459Z\",\n                \"deleted_at\": null\n            }\n        ]\n    },\n    \"meta\": {\n        \"totalItems\": 1,\n        \"itemCount\": 1,\n        \"itemsPerPage\": 30,\n        \"totalPages\": 1,\n        \"currentPage\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/organizations/1",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/organizations/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"organizations",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:36:37 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVGWR9GB9BR79AP90Y3B2P-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Organization\",\n    \"data\": {\n        \"name\": \"farmlend\",\n        \"type\": \"buyer\",\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:35:55.459Z\",\n        \"updated_at\": \"2023-05-18T16:35:55.459Z\",\n        \"deleted_at\": null,\n        \"products\": [],\n        \"orders\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Organization",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test-org\",\n    \"type\": \"seller\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/organizations/1",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test-org\",\n    \"type\": \"seller\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/organizations/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"organizations",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:37:00 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVHJ64KDK8CV0XS3TG9GMD-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Organization has been updated\",\n    \"data\": {\n        \"name\": \"test-org\",\n        \"type\": \"seller\",\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:35:55.459Z\",\n        \"updated_at\": \"2023-05-18T16:37:00.325Z\",\n        \"deleted_at\": null,\n        \"products\": [],\n        \"orders\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Organization",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/organizations/1",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/organizations/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"organizations",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:38:19 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVKZNR1E2FVZ9S2EYKY3EZ-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Organization has been deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Mango\",\n    \"variety\": \"Gala\",\n    \"packaging\": \"18KG Boxes\",\n    \"organization_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/products",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Mango\",\n    \"variety\": \"Gala\",\n    \"packaging\": \"18KG Boxes\",\n    \"organization_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/products",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:39:10 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVNGQE0EZB6GYK0MN6FPHH-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product has been created\",\n    \"data\": {\n        \"category\": \"Mango\",\n        \"variety\": \"Gala\",\n        \"packaging\": \"18KG Boxes\",\n        \"organization\": {\n            \"name\": \"test-org\",\n            \"type\": \"seller\",\n            \"id\": 1,\n            \"created_at\": \"2023-05-18T16:35:55.459Z\",\n            \"updated_at\": \"2023-05-18T16:38:19.292Z\",\n            \"deleted_at\": null,\n            \"products\": [],\n            \"orders\": []\n        },\n        \"deleted_at\": null,\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:39:09.792Z\",\n        \"updated_at\": \"2023-05-18T16:39:09.792Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/products",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/products",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:39:24 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVNZVGPQSDB4QT6SBQGEMV-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Products\",\n    \"data\": {\n        \"products\": [\n            {\n                \"category\": \"Mango\",\n                \"variety\": \"Gala\",\n                \"packaging\": \"18KG Boxes\",\n                \"id\": 1,\n                \"created_at\": \"2023-05-18T16:39:09.792Z\",\n                \"updated_at\": \"2023-05-18T16:39:09.792Z\",\n                \"deleted_at\": null\n            }\n        ]\n    },\n    \"meta\": {\n        \"totalItems\": 1,\n        \"itemCount\": 1,\n        \"itemsPerPage\": 20,\n        \"totalPages\": 1,\n        \"currentPage\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/products/1",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/products/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:40:00 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVQ2V41PMH24K1JYWYR6AE-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Product\",\n    \"data\": {\n        \"category\": \"Mango\",\n        \"variety\": \"Gala\",\n        \"packaging\": \"18KG Boxes\",\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:39:09.792Z\",\n        \"updated_at\": \"2023-05-18T16:39:09.792Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"Apples\",\n    \"variety\": \"Galas\",\n    \"packaging\": \"18KG Boxes\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/products/1",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Apples\",\n    \"variety\": \"Galas\",\n    \"packaging\": \"18KG Boxes\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/products/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:40:36 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVR6JQTM5EQW927154KXGD-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product has been updated\",\n    \"data\": {\n        \"category\": \"Apples\",\n        \"variety\": \"Galas\",\n        \"packaging\": \"18KG Boxes\",\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:39:09.792Z\",\n        \"updated_at\": \"2023-05-18T16:40:23.587Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/products/2",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "53"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 May 2023 02:13:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=72"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product has been deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"sell\",\n    \"orders\": [1, 4],\n    \"products\": [\n        {\n            \"product_id\": 2,\n            \"volume\": \"1000KG\",\n            \"price_per_unit\": \"1.5USD/1KG\"\n        }\n    ],\n    \"organization_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/orders",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"sell\",\n    \"orders\": [],\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"volume\": \"1000KG\",\n            \"price_per_unit\": \"1.5USD/1KG\"\n        }\n    ],\n    \"organization_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/orders",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:41:52 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVTF8SHAYZ8KGK7G6ZH9E4-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order has been created\",\n    \"data\": {\n        \"type\": \"sell\",\n        \"referencedOrders\": [],\n        \"products\": [\n            {\n                \"volume\": \"1000KG\",\n                \"price_per_unit\": \"1.5USD/1KG\",\n                \"product\": {\n                    \"category\": \"Apples\",\n                    \"variety\": \"Galas\",\n                    \"packaging\": \"18KG Boxes\",\n                    \"id\": 1,\n                    \"created_at\": \"2023-05-18T16:39:09.792Z\",\n                    \"updated_at\": \"2023-05-18T16:41:05.353Z\",\n                    \"deleted_at\": null\n                },\n                \"deleted_at\": null,\n                \"id\": 1,\n                \"created_at\": \"2023-05-18T16:41:52.118Z\",\n                \"updated_at\": \"2023-05-18T16:41:52.118Z\"\n            }\n        ],\n        \"organization\": {\n            \"name\": \"test-org\",\n            \"type\": \"seller\",\n            \"id\": 1,\n            \"created_at\": \"2023-05-18T16:35:55.459Z\",\n            \"updated_at\": \"2023-05-18T16:38:19.292Z\",\n            \"deleted_at\": null,\n            \"products\": [\n                {\n                    \"category\": \"Apples\",\n                    \"variety\": \"Galas\",\n                    \"packaging\": \"18KG Boxes\",\n                    \"id\": 1,\n                    \"created_at\": \"2023-05-18T16:39:09.792Z\",\n                    \"updated_at\": \"2023-05-18T16:41:05.353Z\",\n                    \"deleted_at\": null\n                }\n            ],\n            \"orders\": []\n        },\n        \"deleted_at\": null,\n        \"id\": 1,\n        \"created_at\": \"2023-05-18T16:41:52.118Z\",\n        \"updated_at\": \"2023-05-18T16:41:52.118Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/orders?page=1&perPage=30",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/orders?page=1&perPage=30",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "perPage",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:42:38 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVVWQCQ8P088JVKRFHF53G-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Orders\",\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": 1,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:41:52.118Z\",\n                \"updated_at\": \"2023-05-18T16:41:52.118Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:42:21.303Z\",\n                \"updated_at\": \"2023-05-18T16:42:21.303Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 3,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:42:30.884Z\",\n                \"updated_at\": \"2023-05-18T16:42:30.884Z\",\n                \"deleted_at\": null\n            }\n        ]\n    },\n    \"meta\": {\n        \"totalItems\": 3,\n        \"itemCount\": 3,\n        \"itemsPerPage\": 30,\n        \"totalPages\": 1,\n        \"currentPage\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/orders/5",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/orders/3",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"orders",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:42:58 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVWGXHD2C6JEJH6R80NJND-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Retrieved Order\",\n    \"data\": {\n        \"id\": 3,\n        \"type\": \"sell\",\n        \"created_at\": \"2023-05-18T16:42:30.884Z\",\n        \"updated_at\": \"2023-05-18T16:42:30.884Z\",\n        \"deleted_at\": null,\n        \"referencedOrders\": [\n            {\n                \"id\": 1,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:41:52.118Z\",\n                \"updated_at\": \"2023-05-18T16:41:52.118Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:42:21.303Z\",\n                \"updated_at\": \"2023-05-18T16:42:21.303Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"products\": [\n            {\n                \"volume\": \"1000KG\",\n                \"price_per_unit\": \"1.5USD/1KG\",\n                \"id\": 3,\n                \"created_at\": \"2023-05-18T16:42:30.884Z\",\n                \"updated_at\": \"2023-05-18T16:42:30.884Z\",\n                \"deleted_at\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"sell\",\n    \"orders\": [2],\n    \"products\": [\n        {\n            \"product_id\": 3,\n            \"volume\": \"1000KG\",\n            \"price_per_unit\": \"1.5USD/1KG\"\n        },\n\n         {\n            \"product_id\": 2,\n            \"volume\": \"500KG\",\n            \"price_per_unit\": \"1.8USD/1KG\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/orders/4",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"sell\",\n    \"orders\": [2],\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"volume\": \"1000KG\",\n            \"price_per_unit\": \"1.5USD/1KG\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/orders/1",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"orders",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:43:46 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVXYCB7SPPHE53RVEF7NT8-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order has been updated\",\n    \"data\": {\n        \"id\": 1,\n        \"type\": \"sell\",\n        \"created_at\": \"2023-05-18T16:41:52.118Z\",\n        \"updated_at\": \"2023-05-18T16:41:52.118Z\",\n        \"deleted_at\": null,\n        \"referencedOrders\": [\n            {\n                \"id\": 2,\n                \"type\": \"sell\",\n                \"created_at\": \"2023-05-18T16:42:21.303Z\",\n                \"updated_at\": \"2023-05-18T16:42:21.303Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"products\": [\n            {\n                \"volume\": \"1000KG\",\n                \"price_per_unit\": \"1.5USD/1KG\",\n                \"product\": {\n                    \"category\": \"Apples\",\n                    \"variety\": \"Galas\",\n                    \"packaging\": \"18KG Boxes\",\n                    \"id\": 1,\n                    \"created_at\": \"2023-05-18T16:39:09.792Z\",\n                    \"updated_at\": \"2023-05-18T16:41:05.353Z\",\n                    \"deleted_at\": null\n                },\n                \"deleted_at\": null,\n                \"id\": 4,\n                \"created_at\": \"2023-05-18T16:43:45.871Z\",\n                \"updated_at\": \"2023-05-18T16:43:45.871Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://farmlend.fly.dev/api/orders/3",
+							"protocol": "https",
+							"host": [
+								"farmlend",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://farmlend.fly.dev/api/orders/3",
+									"protocol": "https",
+									"host": [
+										"farmlend",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"orders",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 18 May 2023 16:44:08 GMT"
+								},
+								{
+									"key": "connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "keep-alive",
+									"value": "timeout=72"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "server",
+									"value": "Fly/ebed0e61 (2023-05-17)"
+								},
+								{
+									"key": "via",
+									"value": "1.1 fly.io"
+								},
+								{
+									"key": "fly-request-id",
+									"value": "01H0QVYMNPG0NB0D5707CPHZ86-cdg"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order has been deleted\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
