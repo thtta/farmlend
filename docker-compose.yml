@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: ./
+      target: production
+    restart: on-failure
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: farmlend
+      DB_PASSWORD: farmlend
+      DB_NAME: farmlend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - migrate
+
+  migrate:
+      build:
+        context: .
+        target: development
+      command: npm run migrate
+      restart: on-failure
+      environment:
+        DB_HOST: postgres
+        DB_PORT: 5432
+        DB_USERNAME: farmlend
+        DB_PASSWORD: farmlend
+        DB_NAME: farmlend
+      depends_on:
+        - postgres
+
+  postgres:
+    image: postgres:15.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: farmlend
+      POSTGRES_USER: farmlend
+      POSTGRES_PASSWORD: farmlend
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres_data:/data/postgres
+
+volumes:
+  postgres_data:
+
