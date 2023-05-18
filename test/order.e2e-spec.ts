@@ -58,7 +58,6 @@ describe('Orders', () => {
     product.organization = organization;
     product = await productRepository.save(product);
     order = await repository.save(order);
-    console.log({ ...order });
   });
 
   afterEach(async () => {
