@@ -24,14 +24,6 @@ jobs:
       - name: Install Depedencies
         run: npm install
 
-      - name: Install Flyctl
-        uses: superfly/flyctl-actions/setup-flyctl@master
-
-      - name: Proxy DB
-        run: flyctl proxy 5433 -a farmlend-db &
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
       - name: Run Migration
         run: npm run migrate
         env:
@@ -40,6 +32,9 @@ jobs:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
+
+      - name: Install Flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
 
       - name: Deploy App
         run: flyctl deploy --remote-only
