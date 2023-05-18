@@ -37,8 +37,8 @@ export class OrganizationService {
       },
       relations: {
         products: true,
-        orders: true
-      }
+        orders: true,
+      },
     });
     if (!organization) {
       throw new HttpException('Organization not found', HttpStatus.NOT_FOUND);
