@@ -17,7 +17,9 @@ async function bootstrap() {
     }),
   );
 
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix('api', {
+    exclude: ['/'],
+  });
 
   await app.listen(configService.get('port'), '0.0.0.0');
 }
