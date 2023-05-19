@@ -85,14 +85,14 @@ The API is currently deployed on a VM hosted by [Fly.io](https://fly.io/). Live 
 To deploy the API, you'll need to have an account on Fly.io and have their cli tool `flyctl` installed locally. From the root of the project's directory, you can now run 
 the following commands:
 
-1. `flyctl launch`.  This will ask you if you would like to copy the existing `fly.toml` configuration to the new app. Select `yes`. 
-2. Next, you will be prompted with a couple of follow up questions, you can pick default values. Once you're done, this will create and configure
+- `flyctl launch`.  This will ask you if you would like to copy the existing `fly.toml` configuration to the new app. Select `yes`. 
+- Next, you will be prompted with a couple of follow up questions, you can pick default values. Once you're done, this will create and configure
 a `fly` app for you by inspecting the source code, then prompt you to deploy, select `yes` as well. 
-3. After deployment, you'll need to set environment variables for the app on `fly.io`. You can do so by running the following command:
+- After deployment, you'll need to have a Postgres instance deployed. You can now set environment variables for the app on `fly.io`. You can do so by running the following command:
 
 ```bash
 flyctl secrets set DB_HOST= DB_PORT= DB_USERNAME= DB_PASSWORD= DB_NAME= PORT=8080
 ```
-3. To view the deployed app, you can run `flyctl status`
-4. To deploy changes to the app, run `flyctl deploy`
-5. To browse the deployed application, run `flyctl open`
+- To view the deployed app, you can run `flyctl status`
+- To deploy changes to the app, run `flyctl deploy`
+- To browse the deployed application, run `flyctl open`
