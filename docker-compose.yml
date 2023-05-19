@@ -20,7 +20,7 @@ services:
 
   migrate:
       build:
-        context: .
+        context: ./
         target: development
       command: npm run migrate
       restart: on-failure
